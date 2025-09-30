@@ -1,0 +1,13 @@
+import requests
+
+def get_aqi_data(location):
+    # Replace with real API in actual deployment
+    # Simulated AQI response
+    aqi = 178  # Example value for testing
+    if aqi <= 50:
+        status = "Good"
+    elif aqi <= 150:
+        status = "Moderate"
+    else:
+        status = "Unhealthy"
+    return aqi, status

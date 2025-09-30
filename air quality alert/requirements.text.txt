@@ -1,0 +1,4 @@
+requests
+tkinter
+matplotlib
+flask

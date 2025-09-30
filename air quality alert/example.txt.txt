@@ -1,0 +1,17 @@
+input
+{
+  "location": "Mumbai",
+  "action": "refresh_aqi"
+}
+{
+  "location": "Delhi",
+  "action": "refresh_aqi"
+}
+
+output
+AQI: 85 (Moderate)
+[No Alert – Limit prolonged outdoor exposure]
+AQI: 85 (Moderate)
+[No Alert – Limit prolonged outdoor exposure]
+
+

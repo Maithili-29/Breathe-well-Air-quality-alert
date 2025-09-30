@@ -1,0 +1,4 @@
+from tkinter import messagebox
+
+def send_alert(aqi, status):
+    messagebox.showwarning("Air Quality Alert!", f"AQI is {aqi} ({status}). Limit outdoor activity!")

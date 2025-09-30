@@ -1,0 +1,25 @@
+from api_handler import get_aqi_data
+from database import save_data, fetch_history
+from notifications import send_alert
+import tkinter as tk
+from tkinter import messagebox
+
+def update_dashboard():
+    aqi, status = get_aqi_data(location="Delhi")
+    save_data(location="Delhi", aqi=aqi)
+    label_aqi.config(text=f"AQI: {aqi} ({status})")
+    if aqi > 150:
+        send_alert(aqi, status)
+
+# GUI setup
+root = tk.Tk()
+root.title("Breathe-Well: Air Quality Alert")
+root.geometry("300x200")
+
+label_aqi = tk.Label(root, text="AQI: --", font=("Arial", 18))
+label_aqi.pack(pady=20)
+
+btn_refresh = tk.Button(root, text="Refresh AQI", command=update_dashboard)
+btn_refresh.pack(pady=10)
+
+root.mainloop()
